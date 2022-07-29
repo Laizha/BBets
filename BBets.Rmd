@@ -89,7 +89,19 @@ Using the mean and standard deviation (subtracting 110 from the mean and adding 
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+```{r}
+Sub <- numeric(length = 1000)
 
+for (j in 1:1000) {
+  Sub[j] = BrLw(numClass = 29)
+}
+```
+
+```{r}
+hist(Sub)
+```
+
+With a 2:1 odds, it appears that there must be about 28 or 29 people in the class in order for the bet to have a fair outcome or, in other words, have the profit be centered towards zero. the distribution when there are 29 students in the class,the histogram above shows and given than the peak lies on the right of zero,Brownlow still gains money from the bet. Meanwhile, making the class size 28 produces a distribution in which the peak lies to the left of zero which means that Brownlow loses money in the bet. Therefore, we can assume that the class size must be between 28 and 29 for there to be a fair bet with a 2:1 odds.
 
 
 # Discussion and Conclusion
