@@ -38,26 +38,59 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
 
 # In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
+
 ## what is their average earnings
+
+```{r}
+mean(Substitute)
+```
+[1] 279.175
+
+
+The average earnings would be about $280 if we were to hire 40 Brownlows to do the bet.
+
+
 ## the standard deviation and a 95% confidence interval for their earnings?
+  
+```{r}
+sd(Substitute)
+```
+[1] 34.75425
+
+
+The standard deviation is 34.574, and based on the central limit theorm, the 95% interval will be within two standard deviation values above and below the mean. So, if we go 68 above and below 280, there will be 95% of the data in the distribution. 
+  
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
 
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 
+
+```{r}
+Fair <- numeric (length=40
+for (j in 1:1000) {
+   Fair[j] =  BrLw(odds=4.38)
+}
+```
+
+
+
+
+
+```{r}
+hist(Fair)
+```
+
+
+
 We are going to hire 100 Brownlows to repeat what Brownlow did
 
 ```{r}
 Substitute <- numeric (length=1000)
 for (j in 1:1000) {
-   Substitute[j] = BrLw(odds=4.38)
+   Substitute[j] =  BrLw(odds=4.38)
 }
-```
-
-
-```{r}
-Substitute <- sort(Substitute)
 ```
 
 
@@ -75,6 +108,12 @@ sd(Substitute)
 ```
 
 [1] 53.70783
+
+
+
+
+When the odds are 4.38:1, Brownlow profits centers around $0 as show in the hitsogram and therefore, the fair odds is when Bownlow wager is $4.38 for every $1 that the students would wager for th bet. 
+
 
 
 Using the mean and standard deviation (subtracting 110 from the mean and adding 110 to the mean) we found the interval we are looking for, and it looks like the profit is centered around zero. If the profit is centered around zero, that is fair odds. More specifically, the fair odds is when Brownlow would wager 4.38 dollars for every dollar the students would wager.
@@ -107,4 +146,6 @@ With a 2:1 odds, it appears that there must be about 28 or 29 people in the clas
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+
+
 
